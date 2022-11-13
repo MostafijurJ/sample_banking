@@ -11,6 +11,10 @@ migratedown:
 sqlc:
 	sqlc generate
 
+# command for running go test cases 
+test: 
+	go test -v -cover ./...
+
 .PHONY:
 	postgres createdb dropdb, migrateup, migratedown, sqlc
 
