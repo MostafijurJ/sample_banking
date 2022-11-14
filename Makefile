@@ -10,12 +10,13 @@ migratedown:
 	migrate -path db/migration -database "postgresql://root:password@localhost:5432/sample_bank?sslmode=disable" -verbose down
 sqlc:
 	sqlc generate
-
 # command for running go test cases 
 test: 
 	go test -v -cover ./...
+server:
+	go run Main.go
 
 .PHONY:
-	postgres createdb dropdb, migrateup, migratedown, sqlc
+	postgres createdb dropdb migrateup migratedown sqlc test server
 
 
