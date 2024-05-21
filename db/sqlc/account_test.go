@@ -3,6 +3,7 @@ package db
 import (
 	"context"
 	"database/sql"
+	"sample_banking/db/utils"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -10,9 +11,9 @@ import (
 
 func CreateNewAccount(t *testing.T) Account {
 	arg := CreateAccountParams{
-		Owner:    "TOM",
-		Balance:  1001,
-		Currency: "BDT",
+		Owner:    utils.RandomUserName(),
+		Balance:  utils.RandomAmount(),
+		Currency: utils.RandomCurrency(),
 	}
 
 	account, err := testQueries.CreateAccount(context.Background(), arg)
