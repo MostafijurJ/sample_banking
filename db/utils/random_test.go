@@ -4,14 +4,14 @@ package utils
 // Path: db/utils/random_test.go
 
 import (
-	"fmt"
 	"github.com/stretchr/testify/require"
+	"log"
 	"testing"
 )
 
-func TestRandomString(t *testing.T) {
-	s := RandomString(12)
-	fmt.Println("Random String OutPut ->  " + s)
-	require.Len(t, s, 12)
+func TestRandomAccountNumber(t *testing.T) {
+	s := RandomAccountNumber()
+	require.Len(t, s, 16)
 	require.NotEmpty(t, s)
+	log.Fatal("account number created successfully : ", s)
 }
