@@ -2,6 +2,7 @@ package utils
 
 import (
 	"math/rand"
+	"strconv"
 	"time"
 )
 
@@ -34,4 +35,18 @@ func RandomCurrency() string {
 	currencies := []string{"BDT", "USD", "EUR", "CAD"}
 	n := len(currencies)
 	return currencies[rand.Intn(n)]
+}
+
+func RandomAccountNumber() string {
+	// only contains digits
+	var accountNo string
+	for i := 0; i < 16; i++ {
+		if i == 4 {
+			accountNo += "-"
+			continue
+		}
+		digit := rand.Intn(10)
+		accountNo += strconv.Itoa(digit)
+	}
+	return accountNo
 }
