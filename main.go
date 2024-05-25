@@ -1,19 +1,17 @@
-package db
+package main
 
 import (
 	"context"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"log"
-	"os"
+	"sample_banking/api"
+	db "sample_banking/db/sqlc"
 	"sample_banking/db/utils"
-	"testing"
 )
 
-var testQueries *Queries
+func main() {
 
-func TestMain(m *testing.M) {
-
-	config, err := utils.LoadConfig("../..")
+	config, err := utils.LoadConfig(".")
 	if err != nil {
 		log.Fatal("cannot load config", err)
 	}
@@ -24,7 +22,12 @@ func TestMain(m *testing.M) {
 		log.Fatal("can't connect to db!")
 	}
 
-	testQueries = New(conn)
+	queries := db.New(conn)
+	server := api.NewServer(queries)
 
-	os.Exit(m.Run())
+	err = server.Start(config.ServerAddress)
+
+	if err != nil {
+		log.Fatal("cannot start server", err)
+	}
 }

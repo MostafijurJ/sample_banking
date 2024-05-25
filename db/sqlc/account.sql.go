@@ -19,7 +19,7 @@ VALUES ($1, $2, $3) RETURNING id, owner, balance, currency, created_at
 type CreateAccountParams struct {
 	Owner    string `json:"owner"`
 	Balance  int64  `json:"balance"`
-	Currency string `json:"currency"`
+	Currency string `json:"currency, one of USD, EUR,BDT"`
 }
 
 func (q *Queries) CreateAccount(ctx context.Context, arg CreateAccountParams) (Account, error) {
