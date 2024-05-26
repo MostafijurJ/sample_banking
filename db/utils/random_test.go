@@ -5,7 +5,6 @@ package utils
 
 import (
 	"github.com/stretchr/testify/require"
-	"log"
 	"testing"
 )
 
@@ -13,5 +12,4 @@ func TestRandomAccountNumber(t *testing.T) {
 	s := RandomAccountNumber()
 	require.Len(t, s, 16)
 	require.NotEmpty(t, s)
-	log.Fatal("account number created successfully : ", s)
 }
