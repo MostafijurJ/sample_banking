@@ -36,4 +36,5 @@ We use SemVer for versioning. For the versions available, see the tags on this r
 2. To generate Go code from SQL queries, run `sqlc generate` in the project directory.
 3. UUID dependency: `go get github.com/google/uuid`
 4. JWT dependency: `go get -u github.com/golang-jwt/jwt/v5`
-5. 
+5.  Paseto dependency: `go get -u github.com/o1egl/paseto`
+6. 
