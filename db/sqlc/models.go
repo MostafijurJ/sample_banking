@@ -35,3 +35,12 @@ type Transfer struct {
 	FromAccountNumber string    `json:"from_account_number"`
 	ToAccountNumber   string    `json:"to_account_number"`
 }
+
+type User struct {
+	ID        int64     `json:"id"`
+	Username  string    `json:"username"`
+	Name      string    `json:"name"`
+	Email     string    `json:"email"`
+	Password  string    `json:"password"`
+	CreatedAt time.Time `json:"created_at"`
+}

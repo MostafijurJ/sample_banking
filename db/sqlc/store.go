@@ -1,10 +1,10 @@
 package db
 
 import (
-	"database/sql"
+	"context"
 )
 
-type Store struct {
-	*Queries
-	db *sql.DB
+type Store interface {
+	GetUserByUsername(ctx context.Context, username string) (User, error)
+	UpdateUser(ctx context.Context, arg UpdateUserParams) (User, error)
 }

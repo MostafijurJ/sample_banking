@@ -37,6 +37,10 @@ func RandomCurrency() string {
 	return currencies[rand.Intn(n)]
 }
 
+func RandomEmail() string {
+	return RandomString(6) + "@yopmail.com"
+}
+
 func RandomAccountNumber() string {
 	// only contains digits
 	var accountNo string
