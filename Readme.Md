@@ -34,3 +34,6 @@ We use SemVer for versioning. For the versions available, see the tags on this r
 1. To create a migrate file in the migrations directory, run the following
      command:  `migrate create -ext sql -dir db/migration -seq users`
 2. To generate Go code from SQL queries, run `sqlc generate` in the project directory.
+3. UUID dependency: `go get github.com/google/uuid`
+4. JWT dependency: `go get -u github.com/golang-jwt/jwt/v5`
+5. 
