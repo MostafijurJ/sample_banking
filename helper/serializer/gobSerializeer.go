@@ -46,5 +46,6 @@ func serializeGob() string {
 		return ""
 	}
 
+	fmt.Println("Serialized Gob --->>> ", buffer.Bytes())
 	return string(buffer.Bytes())
 }

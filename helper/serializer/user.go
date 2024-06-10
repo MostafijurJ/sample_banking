@@ -1,6 +1,8 @@
 package serializer
 
-import "github.com/pelletier/go-toml/v2"
+import (
+	"github.com/pelletier/go-toml/v2"
+)
 
 type User struct {
 	Username string         `json:"username"`
