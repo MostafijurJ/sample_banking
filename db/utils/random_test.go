@@ -1,7 +1,7 @@
 package utils
 
 // create a test case for RandomString
-// Path: db/utils/random_test.go
+// Path: db/helper/random_test.go
 
 import (
 	"github.com/stretchr/testify/require"
